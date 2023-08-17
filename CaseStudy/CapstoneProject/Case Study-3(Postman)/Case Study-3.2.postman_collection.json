@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "10683812-9a0e-49c4-b320-2e3750b6b14e",
+		"name": "Case Study-3.2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28852587"
+	},
+	"item": [
+		{
+			"name": "Positive Testcase",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify status code\",()=>{\r",
+							"    pm.response.to.have.status(200)\r",
+							"}\r",
+							")\r",
+							"pm.test(\"Verify String in status code\",()=>{\r",
+							"    pm.response.to.have.status(\"OK\")\r",
+							"\r",
+							"}\r",
+							")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=1",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Testcase",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify status code\",()=>{\r",
+							"    pm.response.to.have.status(202)\r",
+							"}\r",
+							")\r",
+							"pm.test(\"Verify String in status code\",()=>{\r",
+							"    pm.response.to.have.status(\"ok\")\r",
+							"\r",
+							"}\r",
+							")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=1",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
